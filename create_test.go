@@ -11,16 +11,11 @@ import (
 func TestCreate(t *testing.T) {
 	ctx := context.Background()
 
+	t.Skip()
+
 	user := &User{
 		ID:   uuid.New().String(),
 		Name: "テストマン",
-	}
-
-	projectID := "my-datastore-project"
-
-	client, err := datastore.NewClient(ctx, projectID)
-	if err != nil {
-		t.Fatal(err)
 	}
 
 	k := datastore.NameKey("Users", uuid.New().String(), nil)
