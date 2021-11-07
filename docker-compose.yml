@@ -15,7 +15,7 @@ services:
   datastore:
     image: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
     volumes:
-      - datastore_data:/opt/datastore/data
+      - ./tmp/datastore:/opt/datastore/data
     ports:
       - "30300:8081"
     command: [
@@ -24,6 +24,3 @@ services:
     ]
     environment:
       CLOUDSDK_CORE_PROJECT: my-datastore-project
-
-volumes:
-  datastore_data:
